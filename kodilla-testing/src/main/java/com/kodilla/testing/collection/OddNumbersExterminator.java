@@ -20,7 +20,6 @@ public class OddNumbersExterminator {
             } else {
                 System.out.println("The list is empty. Please add numbers to the list.");
             }
-
         }
         return oddNumbersExterminated;
     }

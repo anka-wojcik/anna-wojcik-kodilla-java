@@ -36,11 +36,38 @@ public class CollectionTestSuite {
         numbers.add(2);
         numbers.add(1);
         //When
-        System.out.println("Testing OddNumbersExterminator list's expected size.");
+        System.out.println("Testing OddNumbersExterminator list's expected elements.");
         ArrayList data = numbersExterminator.exterminate(numbers);
         //Then
-        Assert.assertEquals(data.size(), 2);
+        Assert.assertEquals(data, Arrays.asList(4,2));
     }
+
+    @Test
+    public void testOddNumbersExterminatorOnlyOneElementOdd() {
+        //Given
+        OddNumbersExterminator numbersExterminator = new OddNumbersExterminator();
+        ArrayList<Integer> numbers = new ArrayList<Integer>();
+        numbers.add(5);
+        //When
+        System.out.println("Testing OddNumbersExterminator list's expected elements.");
+        ArrayList data = numbersExterminator.exterminate(numbers);
+        //Then
+        Assert.assertTrue(data.isEmpty());
+    }
+
+    @Test
+    public void testOddNumbersExterminatorOnlyOneElementEven() {
+        //Given
+        OddNumbersExterminator numbersExterminator = new OddNumbersExterminator();
+        ArrayList<Integer> numbers = new ArrayList<Integer>();
+        numbers.add(4);
+        //When
+        System.out.println("Testing OddNumbersExterminator list's expected elements.");
+        ArrayList data = numbersExterminator.exterminate(numbers);
+        //Then
+        Assert.assertEquals(data, Arrays.asList(4));
+    }
+
     @Test
     public void testOddNumbersExterminatorEmptyList(){
         //Given
