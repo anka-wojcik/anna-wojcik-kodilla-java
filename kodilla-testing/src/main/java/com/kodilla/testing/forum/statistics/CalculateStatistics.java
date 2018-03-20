@@ -39,6 +39,7 @@ public class CalculateStatistics {
     }
 
     public void showStatistics() {
+        calculateAdvStatistics(statistics);
         System.out.println("Forum statistics are as follows:\nnumber of users: " + usersNumber + "\nnumber of posts: " + postsNumber + "\naverage number of posts per user: " + averPostsNumberPerUser + "\naverage number of comments per user: " + averCommentsNumberPerUser + "\naverage number of comments per post: " + averCommentsNumberPerPost);
     }
 }
