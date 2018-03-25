@@ -5,8 +5,10 @@ import org.junit.Test;
 import org.mockito.BDDMockito;
 
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.IntStream;
 
 import static java.util.stream.Collectors.toList;
 
@@ -140,6 +142,31 @@ public class BoardTestSuite {
 
         //Then
         Assert.assertEquals(2, longTasks);
+    }
+
+    @Test
+    public void testAddTaskListAverageWorkingOnTask(){
+        //Given
+        Board project = prepareTestData();
+
+        //When
+        List<TaskList> inProgressTask = new ArrayList<>();
+        inProgressTask.add(new TaskList("In progress"));
+        List<Integer> workingDays = project.getTaskLists().stream()
+                .filter(inProgressTask::contains)
+                .flatMap(tl -> tl.getTasks().stream())
+                .map(t -> Period.between(t.getCreated(), LocalDate.now()).getDays())
+                .collect(toList());
+        System.out.println("Number of days spent on tasks in progress:\n" + workingDays);
+
+        double averageWoringDays = IntStream.rangeClosed(workingDays.get(0), workingDays.get(2))
+                .average()
+                .getAsDouble();
+        System.out.println("Average number of days spent on tasks in progress:\n" + averageWoringDays);
+
+        //Then
+        double expectedAverageWorkingDays = 10;
+        Assert.assertEquals(expectedAverageWorkingDays, averageWoringDays, 0.0001);
     }
 
 }
