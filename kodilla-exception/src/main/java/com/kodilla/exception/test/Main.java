@@ -18,11 +18,10 @@ public class Main {
             try {
                 flightSearch.findFlight(flight1);
             } catch (RouteNotFoundException e) {
-
+                System.out.println("Route not found.\n ");
             }finally {
                 System.out.println("Search finished. Do you wish to begin the new search? [y/n]");
-                Scanner scanner1 = new Scanner(System.in);
-                String choice = scanner1.nextLine().toLowerCase();
+                String choice = scanner.nextLine().toLowerCase();
                 if(choice.equals("n")){
                     end = true;
                 }
