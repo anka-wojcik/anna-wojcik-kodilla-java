@@ -7,8 +7,8 @@ public enum Weapon {
     ROCK, PAPER, SCISSORS, LIZARD, SPOCK;
 
     static {
-        ROCK.willBeat(SCISSORS, " smashes ");
-        ROCK.willBeat(LIZARD," crushes ");
+        ROCK.willBeat(SCISSORS, " crushes ");
+        ROCK.willBeat(LIZARD, " crushes ");
         PAPER.willBeat(ROCK, " covers ");
         PAPER.willBeat(SPOCK, " disproves ");
         SCISSORS.willBeat(PAPER, " cuts ");

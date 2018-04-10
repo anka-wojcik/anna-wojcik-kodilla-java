@@ -23,5 +23,5 @@ public abstract class Player {
         System.out.println("\n" + playerChosenWeapon + verb + opponentChosenWeapon);
         System.out.println(getName() + " wins this round!");
         numberOfWonRounds++;
-        }
+    }
 }

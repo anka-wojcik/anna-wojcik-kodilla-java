@@ -8,7 +8,7 @@ public class RPSLSRunner {
         Game game = new Game();
         ConsoleInteractions consoleInteractions = new ConsoleInteractions();
 
-        while(!end) {
+        while (!end) {
             game.gameRunner();
             end = consoleInteractions.exitGameOrStartNewGame();
         }

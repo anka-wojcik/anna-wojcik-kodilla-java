@@ -21,7 +21,7 @@ public class Game {
                 "\n4 - Lizard" +
                 "\n5 - Spock");
         int number = 0;
-        while(number < numberOfGameRounds) {
+        while (number < numberOfGameRounds) {
             Weapon humanChosenWeapon = humanPlayer1.chooseWeapon();
             System.out.println(humanPlayer1.getName() + ", your chosen weapon is: " + humanChosenWeapon);
 
@@ -30,10 +30,10 @@ public class Game {
 
             String verb;
 
-            if((verb = humanChosenWeapon.beats(computerChosenWeapon)) != null) {
+            if ((verb = humanChosenWeapon.beats(computerChosenWeapon)) != null) {
                 humanPlayer1.wonRound(humanChosenWeapon, verb, computerChosenWeapon);
                 number++;
-            } else if((verb = computerChosenWeapon.beats(humanChosenWeapon)) != null) {
+            } else if ((verb = computerChosenWeapon.beats(humanChosenWeapon)) != null) {
                 computerPlayer.wonRound(computerChosenWeapon, verb, humanChosenWeapon);
                 number++;
             } else {
@@ -46,11 +46,11 @@ public class Game {
 
         System.out.println("\n" + humanPlayer1.getName() + "'s final score is: " + humanPlayer1.getNumberOfWonRounds());
         System.out.println(computerPlayer.getName() + "'s final score is: " + computerPlayer.getNumberOfWonRounds());
-        if(humanPlayer1.getNumberOfWonRounds() > computerPlayer.getNumberOfWonRounds()) {
+        if (humanPlayer1.getNumberOfWonRounds() > computerPlayer.getNumberOfWonRounds()) {
             System.out.println("Congratulations! You've won the game!");
-        } else if(computerPlayer.getNumberOfWonRounds() > humanPlayer1.getNumberOfWonRounds()) {
+        } else if (computerPlayer.getNumberOfWonRounds() > humanPlayer1.getNumberOfWonRounds()) {
             System.out.println("Unfortunately you've lost the game. Good luck next time!");
-        }else {
+        } else {
             System.out.println("It's a tie!");
         }
         System.out.println("For exiting game press 'x'. For starting a new game press 'n'.");

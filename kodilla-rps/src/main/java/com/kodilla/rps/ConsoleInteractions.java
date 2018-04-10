@@ -4,6 +4,8 @@ import java.util.*;
 
 public class ConsoleInteractions {
 
+    public static final String N = "n";
+    public static final String Y = "y";
     Scanner scanner = new Scanner(System.in);
 
     public String getHumanName() {
@@ -68,14 +70,14 @@ public class ConsoleInteractions {
 
     public boolean exitGameOrStartNewGame() {
         String input = scanner.next().toLowerCase();
-        if(input.equals("n")) {
+        if(input.equals(N)) {
             System.out.println("Are you sure you want to exit the current game and start a new one? [y/n]");
             input = scanner.next().toLowerCase();
-            return !input.equals("y");
+            return !input.equals(Y);
         }else {
             System.out.println("Are you sure you want to exit the game? [y/n]");
             input = scanner.next().toLowerCase();
-            return input.equals("y");
+            return input.equals(Y);
         }
     }
 }
