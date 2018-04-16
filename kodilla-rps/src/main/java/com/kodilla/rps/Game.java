@@ -15,18 +15,19 @@ public class Game {
 
 
         System.out.println("Possible weapon choices - type number from 1 to 5: " +
-                "\n1 - Rock" +
-                "\n2 - Paper" +
-                "\n3 - Scissors" +
-                "\n4 - Lizard" +
-                "\n5 - Spock");
+                "\n1 - " + Weapon.ROCK +
+                "\n2 - " + Weapon.PAPER +
+                "\n3 - " + Weapon.SCISSORS +
+                "\n4 - " + Weapon.LIZARD +
+                "\n5 - " + Weapon.SPOCK);
         int number = 0;
         while (number < numberOfGameRounds) {
             Weapon humanChosenWeapon = humanPlayer1.chooseWeapon();
             System.out.println(humanPlayer1.getName() + ", your chosen weapon is: " + humanChosenWeapon);
 
             Weapon computerChosenWeapon = computerPlayer.chooseWeapon();
-            System.out.println("Your opponent's chosen weapon is: " + computerChosenWeapon);
+            String str2 = String.format("Your opponent's chosen weapon is: %s", computerChosenWeapon);
+            System.out.println(str2);
 
             String verb;
 
