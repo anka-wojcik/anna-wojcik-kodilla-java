@@ -23,10 +23,4 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
-kodilla-testing/out/
-kodlla-stream/out/
-kodilla-exception/out/
-kodilla-good-patterns/out/
-kodilla-rps/out/
-kodilla-spring-intro/out/
-kodilla-spring/out
+*/out/*
