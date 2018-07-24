@@ -97,11 +97,11 @@ public class CompanyDaoTestSuite {
 
         //When
         List<Employee> employeesWithSelectedLastname = employeeDao.retrieveEmployeeWithProvidedLastname("Smith");
-        List<Company> companiesStartingWithPrefix = companyDao.retrieveCompanyStartingWithThreeCharacters("Gre");
+
 
         //Then
         Assert.assertNotEquals(0, employeesWithSelectedLastname.size());
-        Assert.assertNotEquals(0, companiesStartingWithPrefix.size());
+
 
         //CleanUp
         try {
@@ -113,3 +113,4 @@ public class CompanyDaoTestSuite {
         }
     }
 }
+

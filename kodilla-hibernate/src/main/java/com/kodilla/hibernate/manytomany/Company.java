@@ -6,9 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @NamedNativeQuery(
-        name = "Company.retrieveCompanyStartingWithThreeCharacters",
-        query = "SELECT * FROM COMPANIES" +
-                " WHERE LEFT(COMPANY_NAME, 3) = :PREFIX",
+        name = "Company.retrieveCompanyByPartialName",
+        query = "SELECT * FROM COMPANIES WHERE COMPANY_NAME LIKE CONCAT('%', :ARG, '%')",
         resultClass = Company.class
 )
 
